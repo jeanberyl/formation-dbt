@@ -1,0 +1,29 @@
+name: 'formation_dbt' # <--- LE NOM DU PROJET
+version: '1.0.0'
+config-version: 2
+
+# ATTENTION : Ce nom doit être identique au nom du profil dans votre profiles.yml
+profile: 'formation_dbt' 
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuration des modèles
+models:
+  formation_dbt: # <--- DOIT ÊTRE IDENTIQUE AU "name" CI-DESSUS
+    # La couche staging est généralement vue comme des vues
+    staging:
+      +materialized: view
+    # La couche intermediate et mart est généralement vue comme des tables
+    intermediate:
+      +materialized: table
+    mart:
+      +materialized: table
