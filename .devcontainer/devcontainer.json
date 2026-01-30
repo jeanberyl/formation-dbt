@@ -1,0 +1,19 @@
+{
+    "name": "Formation dbt",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "innoverms.vscode-dbt-power-user", // L'extension indispensable
+                "tamasfe.even-better-toml",        // Pour lire les fichiers de config
+                "ms-python.python",                // Support Python
+                "snowflake.snowflake-vsc"          // Extension officielle Snowflake
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            }
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "vscode"
+}
