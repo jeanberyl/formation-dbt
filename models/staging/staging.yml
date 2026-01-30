@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: raw_data      # Le nom qu'ils utiliseront dans {{ source('raw_data', ...) }}
+    database: FORMATION_DB
+    schema: RAW         # Le nom réel du schéma dans Snowflake
+    tables:
+      - name: orders
+        description: "Table des commandes brutes"
+        tests:
+          - unique
+          - not_null
+      - name: customers
+        description: "Table des clients"
