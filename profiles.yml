@@ -1,0 +1,14 @@
+# Ce fichier est configuré pour la formation
+formation_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ghfgvsj-pbb50410      # compte snowflake trial jusqu'au 20/02
+      user: ELEVE_X                  # À remplacer par votre numéro
+      password: Formation2026!       # Le mot de passe du script précédent
+      role: FORMATION_ROLE
+      database: FORMATION_DB
+      warehouse: FORMATION_WH
+      schema: SCHEMA_ELEVE_X         # À remplacer par votre numéro de shema 
+      threads: 4
